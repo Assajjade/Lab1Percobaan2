@@ -1,0 +1,13 @@
+[
+    {
+        "model":"mywatchlist.wishlistabdi",
+        "pk":1,
+        "fields":{
+            "watched":"Done!",
+            "title":"apiderman",
+            "rating":5,
+            "review":"enaka moool",
+            "tahun":"200"
+        }
+}
+]
