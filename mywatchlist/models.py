@@ -1,6 +1,5 @@
 from operator import mod
 from platform import release
-from turtle import title
 from django.db import models
 from logging.handlers import RotatingFileHandler
 
