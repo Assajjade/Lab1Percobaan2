@@ -1,6 +1,9 @@
 Nama: Abdillah Assajjad
 NPM: 2106653571
 
+Untuk linknya sama seperti Tugas 2: https://tugas-2-pbp-abdi.herokuapp.com/
+akan tetapi link diatas belum bisa menampilkan halaman /mywatchlist/.. dikarenakan proses deployment ke heroku selalu gagal. Saya sudah mencoba deploy dari github, heroku, maupun dari git CLI tetap tidak bisa :').
+
 JSON
 + JSON adalah (Notasi Objek JavaScript) Adalah standar terbuka berbasis teks untuk pertukaran data.
 + JSON adalah bahasa meta.
@@ -41,4 +44,3 @@ Cara implementasi:
 10. Membuat template mywatchlist dengan ekstensi .html
 11. melakukan routing terhadap fungsi views pada urls.py
 12. Mendaftarkan juga aplikasi mywatchlist ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut pada variabel urlpatterns
-13. 
