@@ -1,13 +1,103 @@
 [
     {
-        "model":"mywatchlist.wishlistabdi",
+        "model":"mywatchlist.watchlistabdi",
         "pk":1,
         "fields":{
             "watched":"Done!",
-            "title":"apiderman",
+            "title":"Avengers: Endgame",
             "rating":5,
-            "review":"enaka moool",
-            "tahun":"200"
+            "review":"Menceritakan beberapa saat setelah peristiwa jentikan Thanos, para pahlawan yang tersisa berencana untuk mengembalikan keadaan. Sesuai dengan kalimat semangat “whatever it takes”, para superhero akan mempertaruhkan segalanya demi keadaan alam semesta sebelumnya.",
+            "release_date":"26 April 2019 (USA)"
         }
-}
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":2,
+        "fields":{
+            "watched":"Unwatched",
+            "title":"Ngeri-ngeri Sedap",
+            "rating":4,
+            "review":"Every detail and storyline made for this film is based on the true story of most Indonesian families, especially Batak families.",
+            "release_date":"2 Juni 2022"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":3,
+        "fields":{
+            "watched":"Done!",
+            "title":"Shang-Chi and the Legend of the Ten Rings",
+            "rating":4,
+            "review":"Shang-Chi (Simu Liu) harus menghadapi masa lalunya sebelum ia memilih untuk meninggalkan dan bergabung ke dalam sebuah organisasi bernama Ten Rings.",
+            "release_date":"30 September 2021"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":4,
+        "fields":{
+            "watched":"Done!",
+            "title":"Jungle Cruise",
+            "rating":3,
+            "review":"Frank (Dwayne Johnson) adalah kapten kapal yang berkharisma. Ia bertemu dengan Lily (Emily Blunt), seorang penjelajah yang berambisi menemukan kebenaran mengenai pohon ajaib yang memiliki kekuatan penyembuh.",
+            "release_date":"6 Oktober 2021"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":5,
+        "fields":{
+            "watched":"Unwatched",
+            "title":"Fast & Furious 9",
+            "rating":4,
+            "review":"Dom Toretto (Vin Diesel) menjalani kehidupan yang tenang dengan Letty dan putranya, Brian kecil, tetapi mereka tahu bahwa bahaya selalu mengintai. Kali ini, ancaman itu akan memaksa Dom untuk menghadapi kesalahan dari masa lalunya jika dia ingin menyelamatkan orang yang paling dia cintai. Krunya bergabung bersama untuk menghentikan sesuatu yang dapat menghancurkan dunia. serangan dipimpin oleh pembunuh paling terampil dan pengemudi yang sangat handal dan juga merupakan saudara laki-laki Dom yang ditinggalkan, Jakob (John Cena)",
+            "release_date":"16 Juni 2021"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":6,
+        "fields":{
+            "watched":"Unwatched",
+            "title":"Money Heist",
+            "rating":4,
+            "review":"Money Heist adalah serial drama televisi bertemakan kriminal dari Spanyol. Diproduseri oleh Álex Pina, seri ini awalnya dimaksudkan sebagai seri terbatas untuk diceritakan dalam dua bagian. Seri ini aslinya memiliki 15 episode yang mengudara jaringan televisi Spanyol, Antena 3, dari 2 Mei 2017 hingga 23 November 2017.",
+            "release_date":"16 Juni 2021"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":7,
+        "fields":{
+            "watched":"Unwatched",
+            "title":"Top Gun: Maverick",
+            "rating":5,
+            "review":"Lebih dari 30 tahun mengabdi sebagai salah satu penerbang Angkatan Laut terbaik, Pete “Maverick” Mitchell berada dalam posisi dambaannya, melakukan aksi-aksi mendobrak sebagai pilot uji nan pemberani, dan menampik setiap kesempatan naik pangkat karena akan membuatnya tak bisa menerbangkan pesawatnya.",
+            "release_date":"27 Mei 2022"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":8,
+        "fields":{
+            "watched":"Done!",
+            "title":"Mulan",
+            "rating":3,
+            "review":"Ketika kaisar Tiongkok mengeluarkan dekrit bahwa satu pria dari setiap keluarga wajib bergabung dalam tentara kekaisaran untuk mempertahankan negara dari serangan bangsa Hun, Hua Mulan, putri tertua dari seorang pejuang terhormat, memutuskan menggantikan ayahnya yang sakit-sakitan.",
+            "release_date":"25 Maret 2020"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":9,
+        "fields":{
+            "watched":"Done!",
+            "title":"Teka-teki Tika",
+            "rating":4,
+            "review":"Budiman dan Sherly tengah merayakan ulang tahun pernikahan di rumah megah mereka. Arnold, Laura, Andre, dan Jane datang untuk merayakan sembari berakhir pekan. Mereka tengah berbahagia juga karena Budiman akan mendapatkan proyek besar dari pemerintah.",
+            "release_date":"23 Desember 2021"
+        }
+    },{
+        "model":"mywatchlist.watchlistabdi",
+        "pk":9,
+        "fields":{
+            "watched":"Done!",
+            "title":"Sabar ini Ujian",
+            "rating":5,
+            "review":"Sabar Ini Ujian adalah film komedi romantis Indonesia dengan tema time-loop pertama di Indonesia. Film ini disutradarai oleh Anggy Umbara dan diproduksi oleh MD Pictures bersama Umbara Brothers Film.",
+            "release_date":"5 September 2020"
+        }
+    }
 ]

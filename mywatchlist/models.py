@@ -6,10 +6,10 @@ from logging.handlers import RotatingFileHandler
 
 # Create your models here.
 
-class WishlistAbdi(models.Model):
+class WatchlistAbdi(models.Model):
     watched = models.CharField(max_length=10)
     title = models.CharField(max_length=255)
     rating = models.IntegerField()
-    release_date = models.CharField(max_length=11)
+    release_date = models.CharField(max_length=50)
     review = models.TextField()
     
