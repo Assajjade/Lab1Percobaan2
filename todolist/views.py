@@ -13,7 +13,7 @@ from todolist.forms import addTask
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.all()
+    data_todolist = Task.objects.filter(user = request.user)
     context = {
     'todolist': data_todolist,
     'nama': 'Abdillah Assajjad',
