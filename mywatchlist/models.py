@@ -1,7 +1,4 @@
-from operator import mod
-from platform import release
 from django.db import models
-from logging.handlers import RotatingFileHandler
 
 # Create your models here.
 
