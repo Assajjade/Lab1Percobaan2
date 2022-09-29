@@ -12,6 +12,8 @@ Ya, kita dapat membuat elemen form secara manual tanpa menggunakan generator sep
 
 **Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML. **
 
+![image](https://user-images.githubusercontent.com/87772747/192937204-ee7ec69d-4f10-44a8-abee-fc484318ea6f.png)
+
 User akan menulis alamat dari web yang kemudian HTTP request akan digenerate di browser lalu dikirimkan ke server. Server akan menerima request tadi dan akan mencari fungsi views.py mana yang akan menghandle path. Setelah itu halaman form akan dikembalikan ke user dan ditampilkan lewat browser. User akan mengisi form kemudian browser akan generate HTTP request, method, dan arguments ke URL destination dan mengirimkannya ke server. Server menerima request berupa form yang sudah diisi kemudian server akan mengecek dan mencari views.py mana yang akan menghandle atau memprosesnya. Setelah itu, akan digenerate halama HTML yang kemudian akan di display ke user.
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.**
