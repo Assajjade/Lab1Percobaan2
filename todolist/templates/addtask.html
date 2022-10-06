@@ -1,12 +1,39 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  	<meta charset="UTF-8">
+  	<title>CodePen - A Pen by Mohithpoojary</title>
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
 
-{% block content %}
-
-<form action="" method="POST">
-    {% csrf_token %}
-    {{Task}}
-
-    <input type="submit" name="Submit">
-</form>
-
-{% endblock content %}
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+	<div class="screen">
+		<div class="screen__content" style="width: 400px;">
+			<form class="login"action="" method="POST">
+                {% csrf_token %}
+                {{Task}}
+				<button class="button login__submit">
+					<span class="button__text"><input type="submit" name="Submit" placeholder="Add"></span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login">
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
