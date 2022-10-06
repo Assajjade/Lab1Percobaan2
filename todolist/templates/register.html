@@ -18,7 +18,13 @@
                 {% csrf_token %}  
               <div class="form-outline mb-4">
                 {{ form.as_table }} 
+                
+                <div class="text-center pt-1 mb-5 pb-1">
+                  <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                  <input class="btn btn-primary btn-block fa-lg gradient-custom-2 " type="submit" name="submit" value="Register"/></button>
+                </div>
               </div>
+              
               </form>
               {% if messages %}  
                     <ul>   
