@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Todolist</title>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
+<script>
+    $(document).ready(function(){
+        $.get("{% url 'todolist:show_todolist_by_json' %}", function(data){
+            var content = `
+            <table class="table table-responsive-xl">
+                <thead>
+                    <tr>
+                    <th>&nbsp;</th>
+                    <th>Tanggal Pembuatan Task</th>
+                    <th>Judul Task</th>
+                    <th>Deskripsi Task</th>
+                    <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            for(var i = 0; i < data.length; i++){
+                content += `
+                <tr class="alert" role="alert">
+                    <td>
+                        <label class="checkbox-wrap checkbox-primary">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td class="d-flex align-items-center">
+                        <div ></div>
+                        <div class="pl-3 email">
+                        <span>${data[i].fields.date} </span>
+                        <span></span>
+                        </div>
+                    </td>
+                    <td>${data[i].fields.title}</td>
+                    <td class="status"><span class="active">${data[i].fields.description}</span></td>
+                    <td>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                        </button>
+                    </td>
+                    </tr>
+                `
+            }
+            content += `
+                </tbody>
+            </table>
+            `
+            $('section').html(content);
+        })
+        $.get('/todolist/json/', function(data){
+            var card = `
+            <div class="d-flex flex-row">
+            `
+            for (var i = 0; i < data.length; i++){
+                card += `
+                <div class="card flex-row" style="width: 18rem; margin: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">${data[i].fields.title}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${data[i].fields.date}</h6>
+                        <p class="card-text">${data[i].fields.description}</p>
+                    </div>
+                </div>
+                `
+            }
+            card += '</div>'
+            $('#cardds').html(card)
+        })
+    })
+ 
+
+ </script>
+{% endblock meta %}
+
+{% block content %}
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="collapse navbar-collapse" id="ftco-nav">
+    <a class="navbar-brand" href="#"><h1>Tugas 4 Assignment PBP</h1></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Task</a></li>
+      <li class="nav-item active">
+        <a> s</a>
+        <container>
+          <a class="btn btn-primary " href="{% url 'todolist:logout' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log Out</a>
+        </container>
+      </li>
+    </ul>
+  </div>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+  </div>
+</nav>
+
+
+  <h5>UserName: </h5>
+  <p>{{username}}</p>
+
+  <section>p</section>
+
+  {% comment %} Add the data below this line {% endcomment %}
+    <div id="cardds" class="d-flex flex-row">  
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="login"action="" method="POST">
+          {% csrf_token %}
+          <h1 class="font-bold font-5xl">ADD TODOLIST</h1>
+            <div class="flex flex-row">
+                <label for="title" class="mb-2 font-5xl">Title</label>
+                <a class="" style="color: #FFF;">ssss</a>
+                <input type="text" name="title" id="title" placeholder="Title" required>
+            </div>
+            <div class="flex flex-row">
+                <label for="description" class="mb-2 font-5xl">Description</label>
+                <textarea name="deskripsi" id="deskripsi" cols="23" placeholder="deskripsi" required></textarea>
+            </div>
+        </form>
+        <button id="Submit-Button" class="login__submit" data-bs-dismiss="modal">
+            <span class="button__text">Add</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        </button>		
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="table-wrap">
+    <table class="table table-responsive-xl">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Tanggal Pembuatan Task</th>
+          <th>Judul Task</th>
+          <th>Deskripsi Task</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for list in todolist %}
+    
+        <tr class="alert" role="alert">
+          <td>
+            <label class="checkbox-wrap checkbox-primary">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+          <td class="d-flex align-items-center">
+            <div class="img" style="background-image: url(images/person_1.jpg);"></div>
+            <div class="pl-3 email">
+              <span>{{ list.date }} </span>
+              <span></span>
+            </div>
+          </td>
+          <td>{{ list.title }}</td>
+          <td class="status"><span class="active">{{ list.description }}</span></td>
+          <td>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true"><i class="fa fa-close"></i></span>
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div> -->
+
+<script>
+    $(document).ready(function(){
+        $('#Submit-Button').click(function(){
+            var Title = document.getElementById('title').value;
+            var Description = $('#deskripsi').val();
+            var CSRFtoken = $('input[name="csrfmiddlewaretoken"]').val();
+            $.post('/todolist/add/', {
+                description: Description,
+              
+                title: Title,
+                
+                csrfmiddlewaretoken: CSRFtoken,
+            }, function(){
+              $('section').empty();
+              $.get("{% url 'todolist:show_todolist_by_json' %}", function(data){
+            var content = `
+            <table class="table table-responsive-xl">
+                <thead>
+                    <tr>
+                    <th>&nbsp;</th>
+                    <th>Tanggal Pembuatan Task</th>
+                    <th>Judul Task</th>
+                    <th>Deskripsi Task</th>
+                    <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            for(var i = 0; i < data.length; i++){
+                content += `
+                <tr class="alert" role="alert">
+                    <td>
+                        <label class="checkbox-wrap checkbox-primary">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td class="d-flex align-items-center">
+                        <div></div>
+                        <div class="pl-3 email">
+                        <span>${data[i].fields.date} </span>
+                        <span></span>
+                        </div>
+                    </td>
+                    <td>${data[i].fields.title}</td>
+                    <td class="status"><span class="active">${data[i].fields.description}</span></td>
+                    <td>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                        </button>
+                    </td>
+                    </tr>
+                `
+            }
+            content += `
+                </tbody>
+            </table>
+            `
+            $('section').html(content);
+        })
+        $('#cardds').empty();
+        $.get('/todolist/json/', function(data){
+            var card = `
+            <div class="d-flex flex-row">
+            `
+            for (var i = 0; i < data.length; i++){
+                card += `
+                <div class="card flex-row" style="width: 18rem; margin: 2px;">
+                    <div class="card-body">
+                        <h5 class="card-title">${data[i].fields.title}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${data[i].fields.date}</h6>
+                        <p class="card-text">${data[i].fields.description}</p>
+                    </div>
+                </div>
+                `
+            }
+            card += '</div>'
+            $('#cardds').html(card)
+        })
+            })
+        })
+    })
+</script>
+
+
+    
+  
+
+ 
+
+ {% endblock content %}
